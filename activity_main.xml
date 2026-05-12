@@ -1,54 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#F5F5F5">
 
     <LinearLayout
-        android:layout_width="352dp"
-        android:layout_height="649dp"
-        android:orientation="vertical"
-        tools:layout_editor_absuluteX="26dp"
-        tools:layout_editor_absuluteY="44dp"
-        tools:ignore="MissingConstraints">
-
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Digite um novo item: "
-        android:textSize="20dp"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/txtItem"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/btAdicionar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Adicionar"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints" />
-
-        <ListView
-            android:id="@+id/lista"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:ignore="MissingConstraints" />
+            android:text="Minhas Tarefas"
+            android:textSize="26sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Painel de entrada de dados -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            android:layout_marginBottom="24dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <EditText
+                    android:id="@+id/txtItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="O que você precisa fazer?"
+                    android:background="@android:color/transparent"
+                    android:padding="12dp"
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:id="@+id/btAdicionar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ADICIONAR TAREFA"
+                    android:backgroundTint="#6200EE"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- A Lista de tarefas -->
+        <ListView
+            android:id="@+id/lista"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:paddingTop="8dp"
+            android:clipToPadding="false"/>
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
